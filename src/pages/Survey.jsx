@@ -2,68 +2,39 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
-
-// const options = {
-//   method: 'GET',
-//   headers: {
-//     'X-RapidAPI-Key': '5b217cb77b612be62f69b774f415a79c',
-//     'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
-//   }
-// };
-
-//   fetch('https://api-football-v1.p.rapidapi.com/v3/players?league=39&season=2020', options)
-//   .then(response => response.json())
-//   .then(response => console.log(response))
-//   .catch(err => console.error(err));
-
-
-const API_URL = `https://api-football-v1.p.rapidapi.com/v3/players?league=39&season=2020`;
-const API_KEY = `5b217cb77b612be62f69b774f415a79c`;
-
-// const fetchData = () => {
-//   fetch(API_URL, {
-//     headers: {
-//       "X-RapidAPI-Key": API_KEY
-//     }
-//   })
-//     .then(response => response.json())
-//     .then(data => {
-//       // Manipuler les données pour les afficher dans votre application
-//       console.log(data)
-//     })
-//     .catch(error => {
-//       console.error(error);
-//     });
-// };
-
-
-const fetchData = () => {
-  fetch("https://v3.football.api-sports.io/countries", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "v3.football.api-sports.io",
-		"x-rapidapi-key": "5b217cb77b612be62f69b774f415a79c"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.log(err);
-});
-
-}
-
-
-
-
 function Survey() {
-  useEffect(() => {
-    fetchData();
-  }, []);
+
+  // const [ligues, setData] = useState([]);
+
+  // useEffect(() => {
+  //   fetch("https://v3.football.api-sports.io/leagues", {
+  //     "method": "GET",
+  //     "headers": {
+  //       "x-rapidapi-host": "v3.football.api-sports.io",
+  //       "x-rapidapi-key": "5b217cb77b612be62f69b774f415a79c"
+  //     }
+  //   })
+  //   .then((response) => response.json())
+  //   .then((result) => {setData(result.response)})
+  //   .catch((error) => console.log(error))
+
+  //   ;},[]);
 
 
-// const [foot, setFoot] = useState({})
+
+  // return (
+    // <div>
+    //   {/* {ligue[2].league.name} */}
+
+
+    // <ul>
+    //    {ligues.map((ligue, index) => (
+    //       <li key={index}>{ligue.league.name}</li>
+    // ))}
+    // </ul>
+    // </div>
+  // )
+
 
   const { questionNumber } = useParams()
   const questionNumberInteger = parseInt(questionNumber)
@@ -82,7 +53,7 @@ function Survey() {
              )}
 
 
-          {/* <p>{foot[parameters][league]}</p> */}
+          {/* <p>{foot}</p> */}
 
       </div>
   )
